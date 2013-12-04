@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="actionType">
+    <xs:sequence>
+      <xs:element name="action_id" type="xs:positiveInteger"/>
+      <xs:element name="action_name" type="xs:string"/>
+      <xs:element name="action_value" type="xs:string"/>
+      <xs:element name="action_idapplication" type="xs:positiveInteger"/>
+      <xs:element name="action_command" type="xs:string"/>
+      <xs:element name="action_commandonsuccess" type="xs:string"/>
+      <xs:element name="action_commandonfail" type="xs:string"/>
+      <xs:element name="action_nextpageonsuccess" type="xs:string"/>
+      <xs:element name="action_nextpageonfail" type="xs:string"/>
+      <xs:element name="action_checkquerys">
+        <xs:complexType>
+          <xs:sequence>
+			<xs:element name="action_checkquery" minOccurs="0" maxOccurs="unbounded">
+			  <xs:complexType>
+				<xs:sequence>
+				  <xs:element name="action_checkquery_id" type="xs:positiveInteger"/>
+				  <xs:element name="action_checkquery_indexquery" type="xs:positiveInteger"/>
+				  <xs:element name="action_checkquery_indexsubquery" type="xs:positiveInteger"/>
+				  <xs:element name="action_checkquery_condition" type="xs:string"/>
+				  <xs:element name="action_checkquery_sql" type="xs:string"/>
+				</xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="action_checkfields">
+        <xs:complexType>
+          <xs:sequence>
+			<xs:element name="action_checkfield" minOccurs="0" maxOccurs="unbounded">
+			  <xs:complexType>
+				<xs:sequence>
+				  <xs:element name="action_checkfield_id" type="xs:positiveInteger"/>
+				  <xs:element name="action_checkfield_condition" type="xs:string"/>
+				  <xs:element name="action_checkfield_error" type="xs:string"/>
+				</xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="action_queryonsuccesss">
+        <xs:complexType>
+          <xs:sequence>
+			<xs:element name="action_queryonsuccess" minOccurs="0" maxOccurs="unbounded">
+			  <xs:complexType>
+				<xs:sequence>
+				  <xs:element name="action_queryonsuccess_id" type="xs:positiveInteger"/>
+				  <xs:element name="action_queryonsuccess_indexquery" type="xs:positiveInteger"/>
+				  <xs:element name="action_queryonsuccess_indexsubquery" type="xs:positiveInteger"/>
+				  <xs:element name="action_queryonsuccess_condition" type="xs:string"/>
+				  <xs:element name="action_queryonsuccess_sql" type="xs:string"/>
+				</xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="action_queryonfails">
+        <xs:complexType>
+          <xs:sequence>
+			<xs:element name="action_queryonfail" minOccurs="0" maxOccurs="unbounded">
+			  <xs:complexType>
+				<xs:sequence>
+				  <xs:element name="action_queryonfail_id" type="xs:positiveInteger"/>
+				  <xs:element name="action_queryonfail_indexquery" type="xs:positiveInteger"/>
+				  <xs:element name="action_queryonfail_indexsubquery" type="xs:positiveInteger"/>
+				  <xs:element name="action_queryonfail_condition" type="xs:string"/>
+				  <xs:element name="action_queryonfail_sql" type="xs:string"/>
+				</xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

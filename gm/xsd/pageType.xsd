@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:include schemaLocation="sectionType.xsd" />
+<xs:include schemaLocation="cssType.xsd" />
+<xs:include schemaLocation="javascriptType.xsd" />
+
+  <xs:complexType name="pageType">
+    <xs:sequence>
+      <xs:element name="page_id" type="xs:positiveInteger"/>
+      <xs:element name="page_name" type="xs:string"/>
+      <xs:element name="page_description" type="xs:string"/>
+      <xs:element name="page_width" type="xs:integer"/>
+      <xs:element name="page_height" type="xs:integer"/>
+      <xs:element name="page_align" type="xs:string"/>
+      <xs:element name="page_istemplate" type="xs:integer"/>
+      <xs:element name="page_usetemplate" type="xs:string"/>
+      <xs:element name="page_ishome" type="xs:integer"/>
+      <!--xs:element name="page_idcss" type="xs:integer"/-->
+	  <xs:element name="page_css" type="cssType" minOccurs="0" maxOccurs="1" />
+      <!--xs:element name="page_idjavascript" type="xs:integer"/-->
+	  <xs:element name="page_javascript" type="javascriptType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="page_idapplication" type="xs:positiveInteger"/>
+      <xs:element name="page_html" type="xs:string"/>
+      <xs:element name="page_command" type="xs:string"/>
+	  <xs:element name="sections" minOccurs="0">
+		<xs:complexType>
+		  <xs:sequence>
+			<xs:element name="section" type="sectionType" minOccurs="0" maxOccurs="unbounded" />
+		  </xs:sequence>
+		</xs:complexType>
+	  </xs:element>
+	  <xs:element name="actions" minOccurs="0">
+		<xs:complexType>
+		  <xs:sequence>
+			<xs:element name="action" type="actionType" minOccurs="0" maxOccurs="unbounded" />
+		  </xs:sequence>
+		</xs:complexType>
+	  </xs:element>
+	</xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

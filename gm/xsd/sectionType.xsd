@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:include schemaLocation="actionType.xsd" />
+
+  <xs:complexType name="sectionType">
+    <xs:sequence>
+      <xs:element name="section_id" type="xs:positiveInteger"/>
+      <xs:element name="section_name" type="xs:string"/>
+      <xs:element name="section_description" type="xs:string"/>
+      <xs:element name="section_idapplication" type="xs:positiveInteger"/>
+      <xs:element name="section_commandpreinitquery" type="xs:string"/>
+      <xs:element name="section_initquerys">
+        <xs:complexType>
+          <xs:sequence>
+			<xs:element name="section_initquery" minOccurs="0" maxOccurs="unbounded">
+			  <xs:complexType>
+				<xs:sequence>
+				  <xs:element name="section_initquery_id" type="xs:positiveInteger"/>
+				  <xs:element name="section_initquery_indexquery" type="xs:positiveInteger"/>
+				  <xs:element name="section_initquery_indexsubquery" type="xs:positiveInteger"/>
+				  <xs:element name="section_initquery_condition" type="xs:string"/>
+				  <xs:element name="section_initquery_sql" type="xs:string"/>
+				</xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="section_views">
+        <xs:complexType>
+          <xs:sequence>
+			<xs:element name="section_view" minOccurs="0" maxOccurs="unbounded">
+			  <xs:complexType>
+				<xs:sequence>
+				  <xs:element name="section_view_id" type="xs:positiveInteger"/>
+				  <xs:element name="section_view_condition" type="xs:string"/>
+				  <xs:element name="section_view_name" type="xs:string"/>
+				  <xs:element name="section_view_isdefault" type="xs:integer"/>
+				  <xs:element name="section_view_width" type="xs:integer"/>
+				  <xs:element name="section_view_height" type="xs:integer"/>
+				  <xs:element name="section_view_commandprelayout" type="xs:string"/>
+				  <xs:element name="section_view_html" type="xs:string"/>
+				  <xs:element name="section_view_htmllayout" type="xs:string"/>
+				</xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+	  <xs:element name="actions" minOccurs="0">
+		<xs:complexType>
+		  <xs:sequence>
+			<xs:element name="action" type="actionType" minOccurs="0" maxOccurs="unbounded" />
+		  </xs:sequence>
+		</xs:complexType>
+	  </xs:element>
+	</xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="javascriptType">
+    <xs:sequence>
+      <xs:element name="page_idjavascript" type="xs:positiveInteger"/>
+      <xs:element name="page_namejavascript" type="xs:string"/>
+      <xs:element name="page_descriptionjavascript" type="xs:string"/>
+      <xs:element name="page_codejavascript" type="xs:string"/>
+	</xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,1 @@
+.gm {	/*background-color: #ffffff;*/	position: absolute;}.gm_section {	/*border:1px dotted black;*/	position: absolute;	text-align:left;}.gm_section_template{	border:1px solid #eeeeee;	background-color: #eeeeee;	position: absolute;	text-align:left;}.sortable {	list-style-type: none;	margin: 0;	padding: 0;}.debug {	display: none;}
